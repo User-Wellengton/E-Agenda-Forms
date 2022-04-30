@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace E_Agenda
+﻿namespace ClubeLeitura.ConsoleApp.Compartilhado
 {
-    public class EntidadeBase
+    public abstract class EntidadeBase
     {
+        public int Numero;
+        internal int numero;
 
-
-
-
+        public abstract string Validar();
     }
 }

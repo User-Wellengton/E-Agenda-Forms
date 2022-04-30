@@ -46,6 +46,7 @@
             this.btnCriarTarefa.TabIndex = 0;
             this.btnCriarTarefa.Text = "CRIAR";
             this.btnCriarTarefa.UseVisualStyleBackColor = true;
+            this.btnCriarTarefa.Click += new System.EventHandler(this.btnCriarTarefa_Click);
             // 
             // listTarefa
             // 

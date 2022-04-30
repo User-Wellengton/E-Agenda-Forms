@@ -1,82 +1,36 @@
-﻿using System;
+﻿using ClubeLeitura.ConsoleApp.Compartilhado;
+using E_Agenda;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace GestaoTarefas.WinApp
 {
-    [Serializable]
-    public class Tarefa
+   
+    public class Tarefa : EntidadeBase
     {
-        private List<ItemTarefa> itens = new List<ItemTarefa>();
-
-        public Tarefa()
-        {
-            DataCriacao = DateTime.Now;
-        }
-
-        public Tarefa(int n, string t) : this()
-        {
-            Numero = n;
-            Titulo = t;
-            DataConclusao = null;
-        }
+        
+        public PrioridadeEnum Prioridade;
 
         public int Numero { get; set; }
         public string Titulo { get; set; }
+        
         public DateTime DataCriacao { get; set; }
         public DateTime? DataConclusao { get; set; }
-        public List<ItemTarefa> Itens { get { return itens; } }
+        public double percentual { get; set; }
+       
 
         public override string ToString()
-        {
-            var percentual = CalcularPercentualConcluido();
+        {           
 
-            if (DataConclusao.HasValue)
-            {
-                return $"Número: {Numero}, Título: {Titulo}, Percentual: {percentual}, " +
-                    $"Concluída: {DataConclusao.Value.ToShortDateString()}";
-            }
-
-            return $"Número: {Numero}, Título: {Titulo}, Percentual: {percentual}";
+            return $"Número: {Numero}, Título: {Titulo}, Prioridade: {Prioridade},Data Criação: {DataCriacao}" +
+                $", Data de Conclusão: {DataConclusao}, Percentual: {percentual}";
         }
 
-        public void AdicionarItem(ItemTarefa item)
+        public override string Validar()
         {
-            if (Itens.Exists(x => x.Equals(item)) == false)
-                itens.Add(item);
+            throw new NotImplementedException();
         }
-
-        public void ConcluirItem(ItemTarefa item)
-        {
-            ItemTarefa itemTarefa = itens.Find(x => x.Equals(item));
-
-            itemTarefa?.Concluir();
-
-            var percentual = CalcularPercentualConcluido();
-
-            if (percentual == 100)
-                DataConclusao = DateTime.Now;
-        }
-
-        public void MarcarPendente(ItemTarefa item)
-        {
-            ItemTarefa itemTarefa = itens.Find(x => x.Equals(item));
-
-            itemTarefa?.MarcarPendente();
-        }
-
-        public decimal CalcularPercentualConcluido()
-        {
-            if (itens.Count == 0)
-                return 0;
-
-            int qtdConcluidas = itens.Count(x => x.Concluido);
-
-            var percentualConcluido = (qtdConcluidas / (decimal)itens.Count()) * 100;
-
-            return Math.Round(percentualConcluido, 2);
-        }
-
 
     }
 }
