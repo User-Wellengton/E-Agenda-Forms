@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace GestaoTarefas.WinApp
+namespace E_Agenda
 {
    
     public class Tarefa : EntidadeBase

@@ -1,6 +1,6 @@
 ﻿namespace E_Agenda
 {
-    partial class s
+    partial class CadastroContato
     {
         /// <summary>
         /// Required designer variable.

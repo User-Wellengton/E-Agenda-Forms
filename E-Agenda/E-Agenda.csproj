@@ -23,4 +23,9 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="eAgenda.Infra\" />
+    <Folder Include="eAgenda.WinApp\Properties\" />
+  </ItemGroup>
+
 </Project>

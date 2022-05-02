@@ -42,6 +42,7 @@
             this.btnCompromissoInicial.TabIndex = 0;
             this.btnCompromissoInicial.Text = "COMPROMISSO";
             this.btnCompromissoInicial.UseVisualStyleBackColor = true;
+            this.btnCompromissoInicial.Click += new System.EventHandler(this.btnCompromissoInicial_Click);
             // 
             // btnTarefaInicial
             // 
@@ -51,6 +52,7 @@
             this.btnTarefaInicial.TabIndex = 1;
             this.btnTarefaInicial.Text = "TAREFA";
             this.btnTarefaInicial.UseVisualStyleBackColor = true;
+            this.btnTarefaInicial.Click += new System.EventHandler(this.btnTarefaInicial_Click);
             // 
             // btnContatoInicial
             // 
@@ -60,6 +62,7 @@
             this.btnContatoInicial.TabIndex = 2;
             this.btnContatoInicial.Text = "CONTATO";
             this.btnContatoInicial.UseVisualStyleBackColor = true;
+            this.btnContatoInicial.Click += new System.EventHandler(this.btnContatoInicial_Click);
             // 
             // label1
             // 

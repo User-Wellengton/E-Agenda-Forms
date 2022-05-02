@@ -10,16 +10,18 @@ using System.Windows.Forms;
 
 namespace E_Agenda
 {
-    public partial class ContatoInicialForms : Form
+    public partial class CadastroContato : Form
     {
-        public ContatoInicialForms()
+        public Contato contato;
+
+
+        public CadastroContato(Contato contato)
         {
             InitializeComponent();
+
+            this.contato = contato; 
         }
 
-        private void ContatoInicialForms_Load(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
