@@ -2,8 +2,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace E_Agenda
@@ -31,7 +33,28 @@ namespace E_Agenda
 
         public override string Validar()
         {
-            throw new NotImplementedException();
+            StringBuilder sb = new();
+
+            if (string.IsNullOrEmpty(Nome))
+                sb.AppendLine("O nome do contato é obrigatório");
+            if (string.IsNullOrEmpty(Email))
+                sb.AppendLine("O e-mail do contato é obrigatório");
+            if (string.IsNullOrEmpty(Telefone))
+                sb.AppendLine("O telefone do contato é obrigatório");
+
+            EmailAddressAttribute e = new();
+            if (!e.IsValid(Email))
+                sb.AppendLine("O email do contato está fora dos padrões");
+
+            string padrao = @"^\([1-9]{2}\) (?:[2-8]|9 [1-9])[0-9]{3}\-[0-9]{4}$";
+            if (!Regex.Match(Telefone, padrao).Success)
+                sb.AppendLine("O telefone do contato está fora dos padrões");
+
+
+            if (sb.Length == 0)
+                sb.Append("REGISTRO_VALIDO");
+
+            return sb.ToString();
         }
 
 

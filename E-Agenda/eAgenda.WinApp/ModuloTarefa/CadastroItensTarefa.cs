@@ -18,7 +18,7 @@ namespace GestaoTarefas.WinApp
         //public CadastroItensTarefa(Tarefa tarefa)
         //{
         //    InitializeComponent();
-            
+
         //    this.tarefa = tarefa;
 
         //    labelTituloTarefa.Text = tarefa.Titulo;
@@ -48,7 +48,7 @@ namespace GestaoTarefas.WinApp
         //        itemTarefa.Titulo = txtTituloItem.Text;
 
         //        listItensTarefa.Items.Add(itemTarefa);
-            }
-        }
     }
 }
+
+

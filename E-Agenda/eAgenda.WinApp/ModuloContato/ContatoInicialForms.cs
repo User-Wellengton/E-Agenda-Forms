@@ -48,6 +48,8 @@ namespace E_Agenda
 
         private void btnExcluirContato_Click(object sender, EventArgs e)
         {
+            Contato contato = (Contato)listContato.SelectedItem; // para selecionar algum para excluir
+
             Contato contatoSelecionado = (Contato)listContato.SelectedItem;
 
             bool temAlgo = VerificarContinuidade(contatoSelecionado, "Excluir");
@@ -68,6 +70,9 @@ namespace E_Agenda
 
         private void btnEditarContato_Click(object sender, EventArgs e)
         {
+            Contato contato = (Contato)listContato.SelectedItem; // para selecionar algum para editar 
+
+
             Contato contatoSelecionado = (Contato)listContato.SelectedItem;
 
             Contato novoContato = new();

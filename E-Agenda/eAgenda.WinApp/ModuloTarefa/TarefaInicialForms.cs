@@ -23,12 +23,12 @@ namespace E_Agenda
 
         }
 
-        private void btnCriarTarefa_Click(object sender, EventArgs e)
-        {
-            CadastroItensTarefa tela = new CadastroItensTarefa();
-            tela.Tarefa = new Tarefa();
+        //private void btnCriarTarefa_Click(object sender, EventArgs e)
+        //{
+        //    CadastroItensTarefa tela = new CadastroItensTarefa();
+        //    tela.Tarefa = new Tarefa();
 
-            DialogResult resultado = tela.ShowDialog();
-        }
+        //    DialogResult resultado = tela.ShowDialog();
+        //}
     }
 }
