@@ -46,6 +46,9 @@ namespace E_Agenda
         private void btnTarefaInicial_Click(object sender, EventArgs e)
         {
 
+            tarefaInicialForms = new(repositorioTarefa);
+            tarefaInicialForms.ShowDialog();         
+
         }
 
         private void btnContatoInicial_Click(object sender, EventArgs e)

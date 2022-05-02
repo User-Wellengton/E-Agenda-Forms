@@ -31,13 +31,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxTitulo = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.maskedBoxDataCriacao = new System.Windows.Forms.MaskedTextBox();
             this.radioButtonBaixa = new System.Windows.Forms.RadioButton();
             this.radioButtonNormal = new System.Windows.Forms.RadioButton();
             this.radioButtonAlta = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -65,17 +63,6 @@
             this.textBoxTitulo.Size = new System.Drawing.Size(414, 31);
             this.textBoxTitulo.TabIndex = 2;
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(391, 345);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(103, 65);
-            this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
             // btnGravar
             // 
             this.btnGravar.DialogResult = System.Windows.Forms.DialogResult.OK;
@@ -86,27 +73,12 @@
             this.btnGravar.TabIndex = 6;
             this.btnGravar.Text = "Gravar";
             this.btnGravar.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(208, 107);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 25);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Data Criação:";
-            // 
-            // maskedBoxDataCriacao
-            // 
-            this.maskedBoxDataCriacao.Location = new System.Drawing.Point(208, 135);
-            this.maskedBoxDataCriacao.Name = "maskedBoxDataCriacao";
-            this.maskedBoxDataCriacao.Size = new System.Drawing.Size(150, 31);
-            this.maskedBoxDataCriacao.TabIndex = 10;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // radioButtonBaixa
             // 
             this.radioButtonBaixa.AutoSize = true;
-            this.radioButtonBaixa.Location = new System.Drawing.Point(208, 182);
+            this.radioButtonBaixa.Location = new System.Drawing.Point(208, 165);
             this.radioButtonBaixa.Name = "radioButtonBaixa";
             this.radioButtonBaixa.Size = new System.Drawing.Size(163, 29);
             this.radioButtonBaixa.TabIndex = 13;
@@ -117,7 +89,7 @@
             // radioButtonNormal
             // 
             this.radioButtonNormal.AutoSize = true;
-            this.radioButtonNormal.Location = new System.Drawing.Point(208, 217);
+            this.radioButtonNormal.Location = new System.Drawing.Point(208, 200);
             this.radioButtonNormal.Name = "radioButtonNormal";
             this.radioButtonNormal.Size = new System.Drawing.Size(182, 29);
             this.radioButtonNormal.TabIndex = 14;
@@ -128,7 +100,7 @@
             // radioButtonAlta
             // 
             this.radioButtonAlta.AutoSize = true;
-            this.radioButtonAlta.Location = new System.Drawing.Point(208, 252);
+            this.radioButtonAlta.Location = new System.Drawing.Point(208, 235);
             this.radioButtonAlta.Name = "radioButtonAlta";
             this.radioButtonAlta.Size = new System.Drawing.Size(154, 29);
             this.radioButtonAlta.TabIndex = 15;
@@ -136,17 +108,24 @@
             this.radioButtonAlta.Text = "Prioridade Alta";
             this.radioButtonAlta.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(209, 130);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(262, 25);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "SELECIONE UMA PROPRIDADE:";
+            // 
             // CadastroTarefaForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.radioButtonAlta);
             this.Controls.Add(this.radioButtonNormal);
             this.Controls.Add(this.radioButtonBaixa);
-            this.Controls.Add(this.maskedBoxDataCriacao);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.textBoxTitulo);
             this.Controls.Add(this.label2);
@@ -163,12 +142,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxTitulo;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGravar;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox maskedBoxDataCriacao;
         private System.Windows.Forms.RadioButton radioButtonBaixa;
         private System.Windows.Forms.RadioButton radioButtonNormal;
         private System.Windows.Forms.RadioButton radioButtonAlta;
+        private System.Windows.Forms.Label label3;
     }
 }

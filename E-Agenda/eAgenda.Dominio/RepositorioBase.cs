@@ -44,7 +44,10 @@ namespace E_Agenda
         {
             return registros;
         }
-
+        public List<T> Filtrar(Predicate<T> condicao)
+        {
+            return registros.FindAll(condicao);
+        }
         public bool ExisteRegistro()
         {
             int quantia = registros.Count;
@@ -53,5 +56,16 @@ namespace E_Agenda
             else
                 return true;
         }
+
+
+        public void AtualizarId()
+        {
+            int idatualiazado = 0;
+            foreach (T registro in registros)
+                registro.Numero = ++idatualiazado;
+
+        }
+
+
     }
 }

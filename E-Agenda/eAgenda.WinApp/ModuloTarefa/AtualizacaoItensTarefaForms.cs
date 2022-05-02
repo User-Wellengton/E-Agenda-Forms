@@ -15,49 +15,58 @@ namespace GestaoTarefas.WinApp
     {
         private readonly Tarefa tarefa;
 
-        //public AtualizacaoItensTarefaForms(Tarefa tarefa)
-        //{
-        //    InitializeComponent();
-        //    this.tarefa = tarefa;
+        public AtualizacaoItensTarefaForms(Tarefa tarefa)
+        {
+            InitializeComponent();
+            this.tarefa = tarefa;
 
-        //    labelTituloTarefa.Text = tarefa.Titulo;
+            labelTituloTarefa.Text = tarefa.Titulo;
 
-        //    CarregarItensTarefa(tarefa);
-        //}
+            CarregarItensTarefa(tarefa);
+        }
 
-        //private void CarregarItensTarefa(Tarefa tarefa)
-        //{
-        //    int i = 0;
-        //    foreach (var item in tarefa.Itens)
-        //    {
-        //        listItensTarefa.Items.Add(item);
+        private void CarregarItensTarefa(Tarefa tarefa)
+        {
+            int i = 0;
+            foreach (var item in tarefa.ListaDeItens)
+            {
+                listItensTarefa.Items.Add(item);
 
-        //        if (item.Concluido)
-        //            listItensTarefa.SetItemChecked(i, true);
+                if (item.itemConcluido)
+                    listItensTarefa.SetItemChecked(i, true);
 
-        //        i++;
-        //    }
-        //}
+                i++;
+            }
+        }
+        public List<Itens> ItensConcluidos
+        {
+            get
+            {
+                return listItensTarefa.CheckedItems
+                    .Cast<Itens>()
+                    .ToList();
+            }
+        }
 
-        //public List<ItemTarefa> ItensConcluidos
-        //{
-        //    get
-        //    {
-        //        return listItensTarefa.CheckedItems
-        //            .Cast<ItemTarefa>()
-        //            .ToList();
-        //    }
-        //}
+        public List<Itens> ItensPendentes
+        {
+            get
+            {
+                return listItensTarefa.Items
+                    .Cast<Itens>()
+                    .Except(ItensConcluidos)
+                    .ToList();
+            }
+        }
 
-        //public List<ItemTarefa> ItensPendentes
-        //{
-        //    get
-        //    {                
-        //        return listItensTarefa.Items
-        //            .Cast<ItemTarefa>()
-        //            .Except(ItensConcluidos)
-        //            .ToList();
-        //    }
-        //}
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnGravar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -39,64 +39,72 @@
             // 
             this.listItensTarefa.CheckOnClick = true;
             this.listItensTarefa.FormattingEnabled = true;
-            this.listItensTarefa.Location = new System.Drawing.Point(18, 53);
+            this.listItensTarefa.Location = new System.Drawing.Point(26, 88);
+            this.listItensTarefa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listItensTarefa.Name = "listItensTarefa";
-            this.listItensTarefa.Size = new System.Drawing.Size(329, 184);
+            this.listItensTarefa.Size = new System.Drawing.Size(468, 284);
             this.listItensTarefa.TabIndex = 0;
             // 
             // labelTituloTarefa
             // 
             this.labelTituloTarefa.AutoSize = true;
             this.labelTituloTarefa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelTituloTarefa.Location = new System.Drawing.Point(65, 20);
+            this.labelTituloTarefa.Location = new System.Drawing.Point(93, 33);
+            this.labelTituloTarefa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTituloTarefa.Name = "labelTituloTarefa";
-            this.labelTituloTarefa.Size = new System.Drawing.Size(85, 15);
+            this.labelTituloTarefa.Size = new System.Drawing.Size(134, 25);
             this.labelTituloTarefa.TabIndex = 15;
             this.labelTituloTarefa.Text = "[Titulo Tarefa]";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 20);
+            this.label2.Location = new System.Drawing.Point(26, 33);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 15);
+            this.label2.Size = new System.Drawing.Size(62, 25);
             this.label2.TabIndex = 14;
             this.label2.Text = "Tarefa:";
             // 
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(275, 246);
+            this.btnCancelar.Location = new System.Drawing.Point(393, 410);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(72, 39);
+            this.btnCancelar.Size = new System.Drawing.Size(103, 65);
             this.btnCancelar.TabIndex = 17;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGravar
             // 
             this.btnGravar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnGravar.Location = new System.Drawing.Point(194, 246);
+            this.btnGravar.Location = new System.Drawing.Point(277, 410);
+            this.btnGravar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGravar.Name = "btnGravar";
-            this.btnGravar.Size = new System.Drawing.Size(72, 39);
+            this.btnGravar.Size = new System.Drawing.Size(103, 65);
             this.btnGravar.TabIndex = 16;
             this.btnGravar.Text = "Gravar";
             this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
-            // AtualizacaoItensTarefa
+            // AtualizacaoItensTarefaForms
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 297);
+            this.ClientSize = new System.Drawing.Size(513, 495);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.labelTituloTarefa);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listItensTarefa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AtualizacaoItensTarefa";
+            this.Name = "AtualizacaoItensTarefaForms";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
