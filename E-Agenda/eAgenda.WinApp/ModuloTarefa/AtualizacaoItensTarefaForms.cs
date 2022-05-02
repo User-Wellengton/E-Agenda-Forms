@@ -1,4 +1,5 @@
-﻿using System;
+﻿using E_Agenda;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,49 +15,49 @@ namespace GestaoTarefas.WinApp
     {
         private readonly Tarefa tarefa;
 
-        public AtualizacaoItensTarefaForms(Tarefa tarefa)
-        {
-            InitializeComponent();
-            this.tarefa = tarefa;
+        //public AtualizacaoItensTarefaForms(Tarefa tarefa)
+        //{
+        //    InitializeComponent();
+        //    this.tarefa = tarefa;
 
-            labelTituloTarefa.Text = tarefa.Titulo;
+        //    labelTituloTarefa.Text = tarefa.Titulo;
 
-            CarregarItensTarefa(tarefa);
-        }
+        //    CarregarItensTarefa(tarefa);
+        //}
 
-        private void CarregarItensTarefa(Tarefa tarefa)
-        {
-            int i = 0;
-            foreach (var item in tarefa.Itens)
-            {
-                listItensTarefa.Items.Add(item);
+        //private void CarregarItensTarefa(Tarefa tarefa)
+        //{
+        //    int i = 0;
+        //    foreach (var item in tarefa.Itens)
+        //    {
+        //        listItensTarefa.Items.Add(item);
 
-                if (item.Concluido)
-                    listItensTarefa.SetItemChecked(i, true);
+        //        if (item.Concluido)
+        //            listItensTarefa.SetItemChecked(i, true);
 
-                i++;
-            }
-        }
+        //        i++;
+        //    }
+        //}
 
-        public List<ItemTarefa> ItensConcluidos
-        {
-            get
-            {
-                return listItensTarefa.CheckedItems
-                    .Cast<ItemTarefa>()
-                    .ToList();
-            }
-        }
+        //public List<ItemTarefa> ItensConcluidos
+        //{
+        //    get
+        //    {
+        //        return listItensTarefa.CheckedItems
+        //            .Cast<ItemTarefa>()
+        //            .ToList();
+        //    }
+        //}
 
-        public List<ItemTarefa> ItensPendentes
-        {
-            get
-            {                
-                return listItensTarefa.Items
-                    .Cast<ItemTarefa>()
-                    .Except(ItensConcluidos)
-                    .ToList();
-            }
-        }
+        //public List<ItemTarefa> ItensPendentes
+        //{
+        //    get
+        //    {                
+        //        return listItensTarefa.Items
+        //            .Cast<ItemTarefa>()
+        //            .Except(ItensConcluidos)
+        //            .ToList();
+        //    }
+        //}
     }
 }

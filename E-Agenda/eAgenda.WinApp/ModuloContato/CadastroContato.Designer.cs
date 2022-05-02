@@ -53,6 +53,7 @@
             this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGravar
             // 
@@ -64,6 +65,7 @@
             this.btnGravar.TabIndex = 11;
             this.btnGravar.Text = "Gravar";
             this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // textBoxNome
             // 
@@ -154,7 +156,7 @@
             this.textBoxCargoEmpresa.Size = new System.Drawing.Size(323, 31);
             this.textBoxCargoEmpresa.TabIndex = 20;
             // 
-            // s
+            // CadastroContato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -172,7 +174,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Name = "s";
+            this.Name = "CadastroContato";
             this.Text = "Cadastro Contato";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -68,7 +68,39 @@ namespace E_Agenda
 
         private void btnEditarContato_Click(object sender, EventArgs e)
         {
+            Contato contatoSelecionado = (Contato)listContato.SelectedItem;
 
+            Contato novoContato = new();
+
+            novoContato.Numero = contatoSelecionado.Numero;
+            novoContato.Nome = contatoSelecionado.Nome;
+            novoContato.Email = contatoSelecionado.Email;
+            novoContato.Telefone = contatoSelecionado.Telefone;
+            novoContato.Empresa = contatoSelecionado.Empresa;
+            novoContato.Cargo = contatoSelecionado.Cargo;
+
+            bool temAlgo = VerificarContinuidade(contatoSelecionado, "Editar");
+            if (!temAlgo)
+                return;
+
+            CadastroContato telaCadContato = new(novoContato); 
+
+            DialogResult res = telaCadContato.ShowDialog();
+
+            if (res == DialogResult.OK)
+            {
+                string status = repositorioContato.Editar(novoContato, contatoSelecionado);
+                if (status == "REGISTRO_VALIDO")
+                {
+                    MessageBox.Show("Contato editado com sucesso!", "Contato", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    CarregarContatosNaTela();
+                }
+                else
+                {
+                    MessageBox.Show($"{status}\nTente novamente", "Contato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CarregarContatosNaTela();
+                }
+            }
 
 
         }
