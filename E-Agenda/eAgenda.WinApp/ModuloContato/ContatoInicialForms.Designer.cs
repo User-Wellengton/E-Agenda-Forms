@@ -76,6 +76,7 @@
             this.listContato.Name = "listContato";
             this.listContato.Size = new System.Drawing.Size(693, 454);
             this.listContato.TabIndex = 9;
+           
             // 
             // btnCriarContato
             // 

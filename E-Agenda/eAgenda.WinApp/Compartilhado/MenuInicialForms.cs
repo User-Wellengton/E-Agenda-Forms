@@ -37,8 +37,8 @@ namespace E_Agenda
 
         private void btnCompromissoInicial_Click(object sender, EventArgs e)
         {
-           // compromissoInicialForms = new(repositorioCompromisso);
-           // compromissoInicialForms.Show();
+           compromissoInicialForms = new(repositorioCompromisso, repositorioContato);
+           compromissoInicialForms.Show();
 
 
         }

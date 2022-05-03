@@ -14,7 +14,6 @@ namespace E_Agenda
     {
         public Contato? contato;
 
-
         public CadastroContato(Contato contato)
         {
             InitializeComponent();

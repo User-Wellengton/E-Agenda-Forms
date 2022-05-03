@@ -65,7 +65,6 @@ namespace E_Agenda
                 CarregarContatosNaTela();
             }
 
-
         }
 
         private void btnEditarContato_Click(object sender, EventArgs e)
