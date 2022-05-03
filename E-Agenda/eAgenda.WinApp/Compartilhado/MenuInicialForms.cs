@@ -25,7 +25,6 @@ namespace E_Agenda
         RepositorioBase<Tarefa> repositorioTarefa;
         TarefaInicialForms? tarefaInicialForms;
 
-
         public MenuInicialForms()
         {
             _jsonTarefaSerialization = new(@"C:\Temp\Tarefas");
