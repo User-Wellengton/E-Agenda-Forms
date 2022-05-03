@@ -13,12 +13,17 @@ namespace E_Agenda
 {
     public partial class TarefaInicialForms : Form
     {
+        private readonly JsonSerialization<Tarefa> tarefaJson;
+
         RepositorioBase<Tarefa> repositorioTarefa;
 
-        public TarefaInicialForms(RepositorioBase<Tarefa> repositorio)
+        public TarefaInicialForms(RepositorioBase<Tarefa> repositorio, JsonSerialization<Tarefa> Json)
         {
-            InitializeComponent();
+            tarefaJson = Json;  
+
             repositorioTarefa = repositorio;
+            InitializeComponent();
+           
             CarregarTarefas();
         }
 
@@ -207,10 +212,12 @@ namespace E_Agenda
                 {
                     TarefaSelecionada.AdicionarItemNaTarefa(item);
                 }
-
+                tarefaJson.Save(repositorioTarefa.SelecionarTodos());
 
                 CarregarTarefas();
             }
+
+
         }
 
         private void btnConcluirItem_Click(object sender, EventArgs e)

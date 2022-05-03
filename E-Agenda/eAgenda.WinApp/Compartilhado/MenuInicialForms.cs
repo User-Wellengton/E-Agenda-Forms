@@ -12,6 +12,10 @@ namespace E_Agenda
 {
     public partial class MenuInicialForms : Form
     {
+        private readonly JsonSerialization<Tarefa> _jsonTarefaSerialization;
+        private readonly JsonSerialization<Contato> _jsonContatoSerialization;
+        private readonly JsonSerialization<Compromisso> _jsonCompromissoSerialization;
+
         RepositorioBase<Contato> repositorioContato;
         ContatoInicialForms? contatoInicialForms;
 
@@ -24,14 +28,18 @@ namespace E_Agenda
 
         public MenuInicialForms()
         {
-            InitializeComponent();
+            _jsonTarefaSerialization = new(@"C:\Temp\Tarefas");
+            _jsonContatoSerialization = new(@"C:\Temp\Contato");
+            _jsonCompromissoSerialization = new(@"C:\Temp\Compromisso");
 
-            repositorioContato = new RepositorioBase<Contato>();
+            repositorioContato = new RepositorioBase<Contato>(_jsonContatoSerialization);
 
-            repositorioCompromisso = new RepositorioBase<Compromisso>();
+            repositorioCompromisso = new RepositorioBase<Compromisso>(_jsonCompromissoSerialization);
 
-            repositorioTarefa = new RepositorioBase<Tarefa>();
+            repositorioTarefa = new RepositorioBase<Tarefa>(_jsonTarefaSerialization);
 
+
+            InitializeComponent();          
 
         }
 
@@ -46,7 +54,7 @@ namespace E_Agenda
         private void btnTarefaInicial_Click(object sender, EventArgs e)
         {
 
-            tarefaInicialForms = new(repositorioTarefa);
+            tarefaInicialForms = new(repositorioTarefa, _jsonTarefaSerialization);
             tarefaInicialForms.ShowDialog();         
 
         }

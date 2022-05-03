@@ -5,23 +5,31 @@ namespace E_Agenda
 {
     public class RepositorioBase<T> where T : EntidadeBase
     {
+
+        private readonly ISerializator<T> _serializator;
+
         protected readonly List<T> registros;
         protected int contadorID;
-
+      
         
-        public RepositorioBase()
+        public RepositorioBase(JsonSerialization<T> serializator)
         {
-            registros = new List<T>();
+            _serializator = serializator;
+            registros = serializator.Load();
         }
-        
+
+       
         public string Inserir(T registro)
         {
+
+
             string resultado = registro.Validar();
             if (resultado != "REGISTRO_VALIDO")
                 return resultado;
 
             registro.Numero = ++contadorID;
             registros.Add(registro);
+            _serializator.Save(registros);
             return "REGISTRO_VALIDO";
         }
 
@@ -33,11 +41,14 @@ namespace E_Agenda
 
             int indice = registros.FindIndex(x => x.Numero == antigoRegistro.Numero);
             registros[indice] = novoRegistro;
+            _serializator.Save(registros);
             return "REGISTRO_VALIDO";
         }
         public bool Excluir(T registro)
-        {
-            return registros.Remove(registro);
+        {          
+             bool excluiu =  registros.Remove(registro);
+            _serializator.Save(registros);
+            return excluiu;
         }
 
         public List<T> SelecionarTodos()

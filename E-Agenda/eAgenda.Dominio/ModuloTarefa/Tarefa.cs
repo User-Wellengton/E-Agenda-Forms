@@ -9,7 +9,7 @@ using System.Text;
 namespace E_Agenda
 {
    
-    public class Tarefa : EntidadeBase, IEnumerable
+    public class Tarefa : EntidadeBase
     {
         private List<Itens> itens = new List<Itens>();
 
@@ -98,10 +98,7 @@ namespace E_Agenda
             return sb.ToString();
         }
 
-        public IEnumerator GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public void AtualizarItens(List<Itens> itensConcluidos, List<Itens> itensPendentes)
         {

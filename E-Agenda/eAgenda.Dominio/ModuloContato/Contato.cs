@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace E_Agenda
 {
-    public class Contato : EntidadeBase, IEnumerable
+    public class Contato : EntidadeBase
     {
         private string nome;
         private string email;
@@ -60,10 +60,6 @@ namespace E_Agenda
 
 
 
-        public IEnumerator GetEnumerator()
-        {
-            throw new System.NotImplementedException();
-        }
 
     }
 }
